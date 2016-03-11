@@ -37,6 +37,12 @@ Route::group(['middleware' => ['web']], function () {
                 'uses' => 'DebugController@firstRoute'
             ]
         );
+        Route::get('route-two',
+            [
+                'as' => 's.route-two',
+                'uses' => 'DebugController@secondRoute'
+            ]
+        );
     });
     Route::group(['prefix' => 'phpstorm-debug', 'namespace' => 'PHPStorm'], function() {
         Route::get('basic', function() {
@@ -46,6 +52,12 @@ Route::group(['middleware' => ['web']], function () {
             [
                 'as' => 'p.route-one',
                 'uses' => 'DebugController@firstRoute'
+            ]
+        );
+        Route::get('route-two',
+            [
+                'as' => 'p.route-two',
+                'uses' => 'DebugController@secondRoute'
             ]
         );
     });

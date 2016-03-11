@@ -12,6 +12,7 @@ class DemoController extends Controller
         $test = 'demo watch expression';
         $test = 'test';
         $test = $this->demoRoute();
+        dd(config('app.debug'));
         return $test;
 //        return View::make('demo', compact("user"));
     }

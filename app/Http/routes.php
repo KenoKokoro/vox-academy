@@ -27,5 +27,26 @@ Route::get('/', function () {
 */
 
 Route::group(['middleware' => ['web']], function () {
-//   Route::get('demo-route', ['uses' => 'DemoController@index']);
+    Route::group(['prefix' => 'sublime-debug', 'namespace' => 'Sublime'], function() {
+        Route::get('basic', function() {
+            return 'Debug ok!';
+        });
+        Route::get('route-one',
+            [
+                'as' => 's.route-one',
+                'uses' => 'DebugController@firstRoute'
+            ]
+        );
+    });
+    Route::group(['prefix' => 'phpstorm-debug', 'namespace' => 'PHPStorm'], function() {
+        Route::get('basic', function() {
+            return 'Debug ok!';
+        });
+        Route::get('route-one',
+            [
+                'as' => 'p.route-one',
+                'uses' => 'DebugController@firstRoute'
+            ]
+        );
+    });
 });

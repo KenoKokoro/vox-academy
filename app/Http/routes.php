@@ -27,5 +27,5 @@ Route::get('/', function () {
 */
 
 Route::group(['middleware' => ['web']], function () {
-   Route::get('demo-route', ['uses' => 'DemoController@index']);
+//   Route::get('demo-route', ['uses' => 'DemoController@index']);
 });

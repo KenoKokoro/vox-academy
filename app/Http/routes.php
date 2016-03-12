@@ -27,37 +27,29 @@ Route::get('/', function () {
 */
 
 Route::group(['middleware' => ['web']], function () {
+    # Sublime routes
     Route::group(['prefix' => 'sublime-debug', 'namespace' => 'Sublime'], function() {
-        Route::get('basic', function() {
-            return 'Debug ok!';
-        });
+        Route::get('/', ['uses' => 'DebugController@index']);
         Route::get('route-one',
             [
                 'as' => 's.route-one',
                 'uses' => 'DebugController@firstRoute'
             ]
         );
-        Route::get('route-two',
-            [
-                'as' => 's.route-two',
-                'uses' => 'DebugController@secondRoute'
-            ]
-        );
     });
+    # PHPStorm routes
     Route::group(['prefix' => 'phpstorm-debug', 'namespace' => 'PHPStorm'], function() {
-        Route::get('basic', function() {
-            return 'Debug ok!';
-        });
+        Route::get('/', ['uses' => 'DebugController@index']);
         Route::get('route-one',
             [
                 'as' => 'p.route-one',
-                'uses' => 'DebugController@firstRoute'
+                'uses' => 'DebugController@basicDebug'
             ]
         );
         Route::get('route-two',
             [
                 'as' => 'p.route-two',
-                'uses' => 'DebugController@secondRoute'
+                'uses' => 'DebugController@conditionalDebug'
             ]
         );
     });

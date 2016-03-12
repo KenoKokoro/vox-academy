@@ -16,9 +16,9 @@ class DebugController extends Controller
         $variable = 'debug me!';
 
         if ($variable = 'can you ?') {
-            return '<img src="http://goo.gl/kCjVPY" />';
+            return '<h2>Houston, we have problem !</h2><img src="http://brkajrabota.mk/images/stories/2012/servisi/turlitava/gif/dekemvri/24/folder/koga-ke-dojdes-do-kafanata-a-pred-vratata-pisuva-zatvoreno.gif" />';
         } else {
-            return "<img src='http://goo.gl/Z3SwiO'/>";
+            return "<h2>Problem solved !</h2><img src='http://www.navalica.com/wp-content/uploads/2012/11/pesna.gif'/>";
         }
     }
 }

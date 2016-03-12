@@ -3,7 +3,6 @@
 namespace Academy\Http\Controllers\PHPStorm;
 
 use Academy\Http\Controllers\Controller;
-use Academy\User;
 
 class DebugController extends Controller
 {
@@ -16,32 +15,30 @@ class DebugController extends Controller
     {
         $variable = 'debug me!';
 
-        if($variable = 'can you ?') {
-            return '<img src="http://goo.gl/kCjVPY" />';
+        if($variable == 'can you ?') {
+            return '<h2>We have bug?</h2><img src="http://www.navalica.com/wp-content/uploads/2012/11/nisto1.gif" />';
         } else {
-            return "<img src='http://goo.gl/Z3SwiO'/>";
+            return "<h2>Problem solved !</h2><img src='http://www.navalica.com/wp-content/uploads/2013/01/simpatija1.gif'/>";
         }
     }
 
     public function conditionalDebug()
     {
+        $finalString = [];
         for($i=0; $i < 200; $i++) {
-            $finalString = 'No condition';
-            if($i % 112 == 0) {
-                $string = $this->returnString();
-                $newString = $this->newString($string);
-                $finalString = parent::parentString($newString);
-            }
-
-            echo $finalString;
+            $string = $this->returnString();
+            $newString = $this->newString($string);
+            $finalString = parent::parentString($newString, $i);
         }
+
+        echo $finalString;
     }
 
     private function returnString()
     {
         $string = "Debugging";
         $string .= " With";
-        $string .= " PhpStorm!";
+        $string .= " PhpStorm !";
 
         return $string;
     }

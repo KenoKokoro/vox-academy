@@ -15,7 +15,7 @@ class DebugController extends Controller
     {
         $variable = 'debug me!';
 
-        if($variable == 'can you ?') {
+        if($variable = 'can you ?') {
             return '<h2>We have bug?</h2><img src="http://www.navalica.com/wp-content/uploads/2012/11/nisto1.gif" />';
         } else {
             return "<h2>Problem solved !</h2><img src='http://www.navalica.com/wp-content/uploads/2013/01/simpatija1.gif'/>";

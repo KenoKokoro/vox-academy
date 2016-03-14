@@ -33,7 +33,7 @@ Route::group(['middleware' => ['web']], function () {
         Route::get('route-one',
             [
                 'as' => 's.route-one',
-                'uses' => 'DebugController@firstRoute'
+                'uses' => 'DebugController@basicDebug'
             ]
         );
     });
